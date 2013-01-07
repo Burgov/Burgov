@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>E-mail via website</title>
+    </head>
+    <body>
+        <img src="{{ logo_src }}" alt="Burgov Websites">
+        <p>Via Burgov Websites is het volgende bericht binnen gekomen:</p>
+        <table>
+            <tr><th>Naam:</th><td>{{ data.name }}</td></tr>
+            <tr><th>E-mail:</th><td>{{ data.email }}</td></tr>
+            <tr><th>Bericht:</th><td>{{ data.message|nl2br }}</td></tr>
+        </table>
+        <p>Met vriendelijke groet,</p>
+        <p>Burgov Websites</p>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+{% extends "BurgovWebsiteBundle:Menu:base.html.twig" %}
+
+{% block label %}
+<img src="{{ asset('/bundles/burgovwebsite/images/social/'~item.getExtra('image')) }}" title="{{ item.getExtra('title') }}" alt="{{ item.getExtra('alt') }}">
+{% endblock %}

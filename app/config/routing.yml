@@ -1,0 +1,21 @@
+#burgov_website:
+#    resource: "@BurgovWebsiteBundle/Controller/"
+#    type:     annotation
+#    prefix:   /
+
+# Internal routing configuration to handle ESI
+#_internal:
+#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   prefix:   /_internal
+
+#home:
+#    pattern: /
+#    defaults:
+#        _controller: BurgovWebsiteBundle:Website:page
+#        content: /cms/content/home
+
+cmf_create_rest:
+    resource: "@SymfonyCmfCreateBundle/Resources/config/routing/rest.xml"
+
+cmf_create_image:
+    resource: "@SymfonyCmfCreateBundle/Resources/config/routing/image.xml"

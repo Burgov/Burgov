@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content=" minimum-scale=1.0, maximum-scale=1.0, width=device-width; user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{% block title %}{{ title|default('Simple CMS')|striptags }}{% endblock %}</title>
+
+    {% block includes %}
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        {% include "SymfonyCmfCreateBundle::includecssfiles.html.twig" %}
+        
+        {% stylesheets "bundles/burgovwebsite/css/style.scss" filter="scssphp,cssrewrite" %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css">
+        {% endstylesheets %}
+    {% endblock %}
+</head>
+<body>
+  <header>
+    <h1><a href="{{ path('/cms/routes') }}"><img src="{{ asset("bundles/burgovwebsite/images/logo.png") }}" alt="Burgov Webdevelopment"></a></h1>
+    <div id="banner"><div><img src="{{ asset("bundles/burgovwebsite/images/banner.png") }}" alt=""></div></div>
+  </header>
+  <div id="main">
+    <nav>
+      <div id="social">
+        {{ knp_menu_render('social', { template: 'BurgovWebsiteBundle:Menu:social.html.twig' }) }}
+      </div>
+
+      <div id="menu">
+        {{ knp_menu_render('main', { template: 'BurgovWebsiteBundle:Menu:main.html.twig' }) }}
+      </div>
+    </nav>
+    <div id="content">
+      {% block body %}
+      {% endblock %}
+    </div>
+    </div>
+  </div>
+  <footer>
+    {{ sonata_block_render({
+        'name': '/cms/content/static/home/footer'
+    }) }}
+  </footer>
+  {% render "symfony_cmf_create.jsloader.controller:includeJSFilesAction" %}
+</body>
+</html>
+

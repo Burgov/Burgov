@@ -1,0 +1,15 @@
+{% extends "BurgovWebsiteBundle:Menu:base.html.twig" %}
+
+{% block linkElement %}
+{{ parent() }}
+{{ block('subtext') }}
+{% endblock %}
+
+{% block spanElement %}
+{{ parent() }}
+{{ block('subtext') }}
+{% endblock %}
+
+{% block subtext %}
+{% if item.extras.subtext%}<p>{{ item.extras.subtext }}</p>{% endif %}
+{% endblock %}

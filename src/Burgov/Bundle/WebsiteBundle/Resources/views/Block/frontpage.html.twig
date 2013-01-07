@@ -1,0 +1,11 @@
+{% createphp block as="rdf" %}
+{{ rdf|raw }}
+{% endcreatephp %}
+
+{#
+<article>
+    <aside><img src="{{ asset("/bundles/burgovwebsite/upload/"~block.image) }}"></aside>
+    <h1>{{ block.title }}</h1>
+    <p>{{ block.content }}</p>
+</article>
+#}

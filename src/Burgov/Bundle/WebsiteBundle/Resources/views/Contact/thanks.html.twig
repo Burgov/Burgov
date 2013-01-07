@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+<h1>Bedankt voor uw bericht</h1>
+
+<p>Onderstaand bericht is verstuurd naar Burgov websites</p>
+
+<table>
+    <tr><th>Naam:</th><td>{{ data.name }}</td></tr>
+    <tr><th>E-mail:</th><td>{{ data.email }}</td></tr>
+    <tr><th>Bericht:</th><td>{{ data.message|nl2br }}</td></tr>
+</table>
+
+<p>Een bericht met bovenstaande gegevens is tevens naar uw adres verzonden</p>
+{% endblock %}

@@ -1,0 +1,142 @@
+$green: #008000;
+$text-color: #595e63;
+$line-color: #c1c4c7;
+$text-size: 11px;
+
+@mixin plain-ul($display: block) {
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+    display: $display;
+  }
+}
+@mixin center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 810px;
+  clear: both;
+}
+body {
+  margin: 0;
+  padding: 0;
+  border-top: 6px solid $green;
+  font: $text-size Arial;
+  color: lighten($text-color, 20%);
+}
+a {
+  text-decoration: none;
+}
+header {
+  img {
+    display: block;
+  }
+  h1 {
+    @include center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  #banner {
+    border: 1px solid $line-color;
+    border-width: 1px 0;
+    background-color: #f1f0f0;
+    img { display: block; }
+    padding: 5px 0;
+    > div {
+      @include center;
+    }
+  }
+}
+#main {
+  @include center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  nav {
+    float: left;
+    width: 230px;
+    text-align: right;
+    padding-right: 30px;
+    border-right: 1px solid $line-color;
+
+    #social {
+      ul { @include plain-ul(inline-block); }
+      img {
+        opacity: .3;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    #menu {
+      ul {
+        @include plain-ul;
+        li {
+
+          margin: 2em 0 0;
+          a {
+            color: $text-color;
+            font-size: $text-size * 1.1;
+            font-weight: bold;
+          }
+        }
+      }
+
+    }
+  }
+  #content {
+    margin-left: 261px;
+    padding-left: 30px;
+
+    article {
+      min-height: 160px;
+      h1 {
+        color: $green;
+        font-size: $text-size * 1.1;
+        margin-left: 180px;
+      }
+      div {
+        margin-left: 180px;
+      }
+      aside {
+        text-align: center;
+        float: left;
+        min-width: 150px;
+        margin-right: 30px;
+        padding: 40px 0;
+      }
+    }
+  }
+
+  table {
+    th {
+      vertical-align: top;
+    }
+  }
+}
+footer {
+  @include center;
+  text-align: right;
+  a {
+    color: #fd9836;
+  }
+}
+
+form {
+    label {
+        display: block;
+        font-weight: bold;
+    }
+
+    & > div > div {
+        margin-bottom: 1em;
+    }
+
+    label + ul {
+        color: red;
+        margin: 0;
+        padding: 0 0 0 2em;
+    }
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bedankt voor uw e-mail</title>
+    </head>
+    <body>
+        <img src="{{ logo_src }}" alt="Burgov Websites">
+        <p>Beste {{ data.name }},<p>
+        <p>Bedankt voor uw e-mail. Voor uw eigen referentie is hier nogmaals uw bericht:</p>
+        <p>{{ data.message|nl2br }}</p>
+        <p>Met vriendelijke groet,</p>
+        <p>Burgov Websites</p>
+    </body>
+</html>

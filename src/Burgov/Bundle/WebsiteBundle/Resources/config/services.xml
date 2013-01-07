@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="burgov_website.block.frontpage" class="Burgov\Bundle\WebsiteBundle\Block\FrontpageBlockService">
+            <argument>frontpage</argument>
+            <argument type="service" id="templating" />
+            <tag name="sonata.block"/>
+        </service>
+        <service id="burgov_website.block.footer" class="Burgov\Bundle\WebsiteBundle\Block\FooterBlockService">
+            <argument>footer</argument>
+            <argument type="service" id="templating" />
+            <tag name="sonata.block"/>
+        </service>
+    </services>
+</container>
